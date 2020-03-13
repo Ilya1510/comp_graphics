@@ -70,7 +70,7 @@ int main( void )
 	GLuint vertexPosition_modelspaceID = glGetAttribLocation(programID, "vertexPosition_modelspace");
 	GLuint vertexColorID = glGetAttribLocation(programID, "vertexColor");
 
-	// Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
+	// Projection matrix : 45ï¿½ Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
 	glm::mat4 Projection = glm::perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.0f);
 	// Camera matrix
 	glm::mat4 View       = glm::lookAt(
@@ -87,7 +87,7 @@ int main( void )
 	// A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
 	static const GLfloat g_vertex_buffer_data[] = { 
 		-1.0f,-1.0f,-1.0f,
-		-1.0f,-1.0f, 1.0f,
+		-1.0f,-1.0f, 2.0f,
 		-1.0f, 1.0f, 1.0f,
 		 1.0f, 1.0f,-1.0f,
 		-1.0f,-1.0f,-1.0f,
@@ -102,24 +102,24 @@ int main( void )
 		-1.0f, 1.0f, 1.0f,
 		-1.0f, 1.0f,-1.0f,
 		 1.0f,-1.0f, 1.0f,
-		-1.0f,-1.0f, 1.0f,
+		-1.0f,-1.0f, 2.0f,
 		-1.0f,-1.0f,-1.0f,
 		-1.0f, 1.0f, 1.0f,
-		-1.0f,-1.0f, 1.0f,
+		-1.0f,-1.0f, 2.0f,
 		 1.0f,-1.0f, 1.0f,
-		 1.0f, 1.0f, 1.0f,
+		 1.0f, 2.0f, 1.0f,
 		 1.0f,-1.0f,-1.0f,
 		 1.0f, 1.0f,-1.0f,
 		 1.0f,-1.0f,-1.0f,
-		 1.0f, 1.0f, 1.0f,
+		 1.0f, 2.0f, 1.0f,
 		 1.0f,-1.0f, 1.0f,
-		 1.0f, 1.0f, 1.0f,
+		 1.0f, 2.0f, 1.0f,
 		 1.0f, 1.0f,-1.0f,
 		-1.0f, 1.0f,-1.0f,
-		 1.0f, 1.0f, 1.0f,
+		 1.0f, 2.0f, 1.0f,
 		-1.0f, 1.0f,-1.0f,
 		-1.0f, 1.0f, 1.0f,
-		 1.0f, 1.0f, 1.0f,
+		 1.0f, 2.0f, 1.0f, //(1,1,1)->(1,2,1)
 		-1.0f, 1.0f, 1.0f,
 		 1.0f,-1.0f, 1.0f
 	};
@@ -150,17 +150,17 @@ int main( void )
 		0.279f,  0.317f,  0.505f,
 		0.167f,  0.620f,  0.077f,
 		0.347f,  0.857f,  0.137f,
-		0.055f,  0.953f,  0.042f,
+		0.055f,  0.153f,  0.042f,
 		0.714f,  0.505f,  0.345f,
 		0.783f,  0.290f,  0.734f,
 		0.722f,  0.645f,  0.174f,
-		0.302f,  0.455f,  0.848f,
-		0.225f,  0.587f,  0.040f,
+		0.902f,  0.455f,  0.848f,
+		0.925f,  0.587f,  0.940f,
 		0.517f,  0.713f,  0.338f,
-		0.053f,  0.959f,  0.120f,
-		0.393f,  0.621f,  0.362f,
-		0.673f,  0.211f,  0.457f,
-		0.820f,  0.883f,  0.371f,
+		0.953f,  0.959f,  0.120f,
+		0.993f,  0.621f,  0.362f,
+		0.673f,  0.111f,  0.457f,
+		0.820f,  0.183f,  0.371f,
 		0.982f,  0.099f,  0.879f
 	};
 
